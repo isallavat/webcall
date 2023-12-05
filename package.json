@@ -1,0 +1,32 @@
+{
+  "name": "webcall",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "stylelint": "stylelint \"**/*.+(css|scss)\" --fix --ignore-path .gitignore",
+    "prettier": "prettier . --write --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "vue": "^3.3.8",
+    "vuex": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.7",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "prettier": "^3.1.0",
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0",
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vite-plugin-svgr": "^4.2.0",
+    "vue-tsc": "^1.8.22"
+  }
+}

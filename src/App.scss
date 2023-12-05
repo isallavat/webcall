@@ -1,0 +1,103 @@
+@import '@/assets/scss/variables';
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 440px;
+  padding: 15px;
+
+  &Title {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  &Logo {
+    display: flex;
+    height: 150px;
+    margin: 10% auto 0;
+    width: 150px;
+  }
+
+  &Buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15%;
+  }
+
+  &Button {
+    background: none;
+    border: 2px solid $palette-green;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    -webkit-tap-highlight-color: transparent;
+    transition: 200ms ease-in-out;
+    width: 45%;
+
+    &:hover {
+      background-color: $palette-green;
+      color: #fff;
+    }
+  }
+
+  &Footer {
+    height: 200px;
+    padding-top: 1px;
+  }
+
+  &UserForm {
+    background-color: var(--color-background-soft);
+    border-radius: 10px;
+    margin-top: 30px;
+    padding: 20px;
+
+    &Note {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+  }
+
+  &Session {
+    border-spacing: 10px;
+    margin-top: 30px;
+    text-align: center;
+
+    &Label {
+      margin-right: 10px;
+    }
+
+    &Value {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+
+      &:hover {
+        color: $palette-green;
+      }
+    }
+
+    &Icon {
+      cursor: pointer;
+      height: 16px;
+      margin-left: 10px;
+      width: 16px;
+    }
+  }
+
+
+  @media (min-width: $width-tablet) {
+    &Session {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

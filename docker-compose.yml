@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  coturn:
+    image: coturn/coturn:4.5.2
+    restart: always
+    network_mode: host
+    environment:
+      TURN_USERNAME: webrtc
+      TURN_PASSWORD: turnserver
+      TURN_PORT: 3478
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: webcall_user
+      POSTGRES_PASSWORD: webcall_password
+      POSTGRES_DB: webcall
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    depends_on:
+      - postgres
+    build: .
+    environment:
+      DATABASE_URI: postgresql://webcall_user:webcall_password@postgres:5432/webcall
+    ports:
+      - 80:80
+      - 443:80
+
+volumes:
+  pgdata:
